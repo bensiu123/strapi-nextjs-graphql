@@ -17,3 +17,30 @@ query SearchRestaurant($filters: RestaurantFiltersInput) {
     }
   }
 }
+
+query GetDishesByRestaurantId($restaurantId: ID) {
+  restaurant(id: $restaurantId) {
+    data {
+      attributes {
+        name
+        dishes {
+          data {
+            id
+            attributes {
+              name
+              price
+              image {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              description
+            }
+          }
+        }
+      }
+    }
+  }
+}

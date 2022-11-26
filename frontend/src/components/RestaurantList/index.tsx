@@ -67,8 +67,7 @@ const RestaurantList: React.FC<Props> = (props) => {
             </CardBody>
             <div className="card-footer">
               <Link
-                as={`/restaurants/${res.id}`}
-                href={`/restaurants?id=${res.id}`}
+                href={`/restaurant?id=${res.id}`}
                 className="btn btn-primary"
               >
                 View
