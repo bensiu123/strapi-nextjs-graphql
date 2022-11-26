@@ -1,0 +1,19 @@
+query SearchRestaurant($filters: RestaurantFiltersInput) {
+  restaurants(filters: $filters) {
+    data {
+      id
+      attributes {
+        name
+        description
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        createdAt
+      }
+    }
+  }
+}
