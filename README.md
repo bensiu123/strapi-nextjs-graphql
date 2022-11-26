@@ -6,6 +6,9 @@ It is aimed to try Strapi, a headless JS CMS, and to learn this limitation.
 
 ## Frontend
 
+1. `yarn`
+2. `yarn dev`
+
 Modification:
 
 - used TypeScript instead of JavaScript
@@ -16,6 +19,10 @@ Modification:
 - authentication with GraphQL, instead of REST API
 
 ## Backend
+
+1. `yarn`
+2. `yarn develop`
+3. Open `http://localhost:1337/admin`
 
 Note:
 
