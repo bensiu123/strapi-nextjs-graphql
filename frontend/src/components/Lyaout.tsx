@@ -1,3 +1,4 @@
+import { useApp } from "@/context/AppContext";
 import Head from "next/head";
 import Link from "next/link";
 import Script from "next/script";
@@ -11,6 +12,8 @@ type Props = {
 const Layout: React.FC<Props> = (props) => {
   const { title = "Strapi Next.js GraphQL food ordering app", children } =
     props;
+
+  const { user, logout } = useApp();
 
   return (
     <div>
@@ -35,16 +38,26 @@ const Layout: React.FC<Props> = (props) => {
             </Link>
           </NavItem>
 
-          <NavItem className="ml-auto">
-            <Link href="/login" className="nav-link">
-              Sign In
-            </Link>
+          <NavItem>
+            {user ? (
+              <h5>{user.username}</h5>
+            ) : (
+              <Link href="/register" className="nav-link">
+                Sign Up
+              </Link>
+            )}
           </NavItem>
 
-          <NavItem>
-            <Link href="/register" className="nav-link">
-              Sign Up
-            </Link>
+          <NavItem className="ml-auto">
+            {user ? (
+              <Link href="/" onClick={logout}>
+                Logout
+              </Link>
+            ) : (
+              <Link href="/login" className="nav-link">
+                Sign In
+              </Link>
+            )}
           </NavItem>
         </Nav>
       </header>

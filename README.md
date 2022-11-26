@@ -13,6 +13,7 @@ Modification:
 - used `@apollo/client` instead of `next-apollo`, `@apollo/react-hooks` & `@apollo/react-ssr` (`next-apollo` doesn't support Next.js 13 at this moment)
 - used `@graphql-codegen` to generate type-safe graphql schema
 - search function achieve by using `filters` provided by API, instead of fetching all results and filter in client
+- authentication with GraphQL, instead of REST API
 
 ## Backend
 
