@@ -1,6 +1,5 @@
 import { MeDocument, MeQuery } from "@/graphql/generated";
 import { useQuery } from "@apollo/client";
-import Cookies from "js-cookie";
 import { createContext, useContext, useEffect, useState } from "react";
 
 export const useAppContext = () => {
@@ -11,14 +10,12 @@ export const useAppContext = () => {
     onCompleted: (data) => {
       const user = data.me;
       if (!user) {
-        Cookies.remove("token");
         localStorage.removeItem("token");
         return null;
       }
       setUser(user);
     },
     onError: (error) => {
-      Cookies.remove("token");
       localStorage.removeItem("token");
       return null;
     },

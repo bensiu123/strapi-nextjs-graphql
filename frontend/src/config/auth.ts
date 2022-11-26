@@ -1,5 +1,4 @@
 import { LoginDocument, RegisterDocument } from "@/graphql/generated";
-import Cookies from "js-cookie";
 import client from "./apollo";
 
 export const registerUser = async (
@@ -23,7 +22,6 @@ export const registerUser = async (
   if (!jwt) throw new Error("[registerUser]: Failed: no JWT returned");
 
   localStorage.setItem("token", jwt);
-  Cookies.set("token", jwt);
 
   return res;
 };
@@ -50,7 +48,6 @@ export const loginUser = async (identifier: string, password: string) => {
   if (!jwt) throw new Error("[registerUser]: Failed: no JWT returned");
 
   localStorage.setItem("token", jwt);
-  Cookies.set("token", jwt);
 
   return res;
 };

@@ -40,7 +40,7 @@ const Layout: React.FC<Props> = (props) => {
 
           <NavItem>
             {user ? (
-              <h5>{user.username}</h5>
+              <h5 className="text-primary">{user.username}</h5>
             ) : (
               <Link href="/register" className="nav-link">
                 Sign Up
