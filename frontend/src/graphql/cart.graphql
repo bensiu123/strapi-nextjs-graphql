@@ -1,0 +1,51 @@
+query GetCart($filters: CartFiltersInput) {
+  carts(filters: $filters) {
+    data {
+      id
+      attributes {
+        dish {
+          data {
+            id
+            attributes {
+              name
+              description
+              image {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              price
+            }
+          }
+        }
+        quantity
+      }
+    }
+  }
+}
+
+mutation AddToCart($data: CartInput!) {
+  createCart(data: $data) {
+    data {
+      id
+    }
+  }
+}
+
+mutation UpdateCart($updateCartId: ID!, $data: CartInput!) {
+  updateCart(id: $updateCartId, data: $data) {
+    data {
+      id
+    }
+  }
+}
+
+mutation RemoveFromCart($deleteCartId: ID!) {
+  deleteCart(id: $deleteCartId) {
+    data {
+      id
+    }
+  }
+}
