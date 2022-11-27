@@ -1,6 +1,7 @@
 import { MeDocument, MeQuery } from "@/graphql/generated";
 import { useQuery } from "@apollo/client";
 import { createContext, useContext, useEffect, useState } from "react";
+import { useCart } from "./Cart";
 
 export const useAppContext = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -36,6 +37,8 @@ export const useAppContext = () => {
     localStorage.removeItem("token");
   };
 
+  const cart = useCart();
+
   return {
     isAuthenticated,
     user,
@@ -43,6 +46,8 @@ export const useAppContext = () => {
     error,
     afterLogin,
     logout,
+
+    cart,
   };
 };
 

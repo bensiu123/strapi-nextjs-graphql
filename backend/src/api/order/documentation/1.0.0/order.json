@@ -1,5 +1,5 @@
 {
-  "/restaurants": {
+  "/orders": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RestaurantListResponse"
+                "$ref": "#/components/schemas/OrderListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Restaurant"
+        "Order"
       ],
       "parameters": [
         {
@@ -159,7 +159,7 @@
           "style": "deepObject"
         }
       ],
-      "operationId": "get/restaurants"
+      "operationId": "get/orders"
     },
     "post": {
       "responses": {
@@ -168,7 +168,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RestaurantResponse"
+                "$ref": "#/components/schemas/OrderResponse"
               }
             }
           }
@@ -225,23 +225,23 @@
         }
       },
       "tags": [
-        "Restaurant"
+        "Order"
       ],
       "parameters": [],
-      "operationId": "post/restaurants",
+      "operationId": "post/orders",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/RestaurantRequest"
+              "$ref": "#/components/schemas/OrderRequest"
             }
           }
         }
       }
     }
   },
-  "/restaurants/{id}": {
+  "/orders/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -249,7 +249,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RestaurantResponse"
+                "$ref": "#/components/schemas/OrderResponse"
               }
             }
           }
@@ -306,7 +306,7 @@
         }
       },
       "tags": [
-        "Restaurant"
+        "Order"
       ],
       "parameters": [
         {
@@ -320,7 +320,7 @@
           }
         }
       ],
-      "operationId": "get/restaurants/{id}"
+      "operationId": "get/orders/{id}"
     },
     "put": {
       "responses": {
@@ -329,7 +329,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RestaurantResponse"
+                "$ref": "#/components/schemas/OrderResponse"
               }
             }
           }
@@ -386,7 +386,7 @@
         }
       },
       "tags": [
-        "Restaurant"
+        "Order"
       ],
       "parameters": [
         {
@@ -400,13 +400,13 @@
           }
         }
       ],
-      "operationId": "put/restaurants/{id}",
+      "operationId": "put/orders/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/RestaurantRequest"
+              "$ref": "#/components/schemas/OrderRequest"
             }
           }
         }
@@ -477,7 +477,7 @@
         }
       },
       "tags": [
-        "Restaurant"
+        "Order"
       ],
       "parameters": [
         {
@@ -491,99 +491,7 @@
           }
         }
       ],
-      "operationId": "delete/restaurants/{id}"
-    }
-  },
-  "/restaurants/{id}/localizations": {
-    "post": {
-      "responses": {
-        "200": {
-          "description": "OK",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RestaurantLocalizationResponse"
-              }
-            }
-          }
-        },
-        "400": {
-          "description": "Bad Request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "401": {
-          "description": "Unauthorized",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "403": {
-          "description": "Forbidden",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "404": {
-          "description": "Not Found",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "500": {
-          "description": "Internal Server Error",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        }
-      },
-      "tags": [
-        "Restaurant"
-      ],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "",
-          "deprecated": false,
-          "required": true,
-          "schema": {
-            "type": "number"
-          }
-        }
-      ],
-      "operationId": "post/restaurants/{id}/localizations",
-      "requestBody": {
-        "required": true,
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/RestaurantLocalizationRequest"
-            }
-          }
-        }
-      }
+      "operationId": "delete/orders/{id}"
     }
   }
 }
